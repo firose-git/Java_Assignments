@@ -1,0 +1,84 @@
+//Assignment - 1
+
+//Marks Program Assignment
+package sample;
+
+public class demo {
+
+	public static void main(String[] args) {
+		int a = 100;
+		if (a>=90 && a<=100)
+		{
+			System.out.println("Distinction");
+		}
+		else if (a>=81 && a<=90)
+		{
+			System.out.println("Distinction");
+		}
+		else if (a>=60 && a<=80)
+		{
+			System.out.println("First Class");
+		}
+		else if (a>=41 && a<=60)
+		{
+			System.out.println("Second Class");
+		}
+		else if (a>=35 && a<=40)
+		{
+			System.out.println("Pass");
+		}
+		else 
+		{
+			System.out.println("Fail");
+		}
+	}
+
+}
+
+
+
+
+//Odd OR Even Number Program
+package sample;
+
+public class Odd_Even_num {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = 5;
+		if (a%2 == 0) {
+			System.out.println("Even Number ");
+		}
+		else {
+			System.out.println("Odd Number");
+		}
+	}
+
+}
+
+
+//Positive or Negative Number Program
+
+package sample;
+
+public class positive_num {
+
+    public static void main(String[] args) {
+        int a = 10;
+
+        if (a > 0) { 
+            System.out.println("Positive Number");
+        } 
+        else if (a < 0) {
+            System.out.println("Negative Number");
+        } 
+        else {
+            System.out.println("Zero");
+        }
+    }
+}
+
+
+
+
+
