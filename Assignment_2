@@ -1,0 +1,110 @@
+//1) Matrimony Question
+package sample;
+
+import java.util.Scanner;
+
+class Matrimony_Validation {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter gender (male/female): ");
+        String gender = sc.nextLine().toLowerCase();
+
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        if (gender.equals("female")) {
+            if (age >= 18)
+                System.out.println("Eligible for marriage");
+            else
+                System.out.println("Not eligible for marriage");
+        } else if (gender.equals("male")) {
+            if (age >= 21)
+                System.out.println("Eligible for marriage");
+            else
+                System.out.println("Not eligible for marriage");
+        } else {
+            System.out.println("Invalid gender");
+        }
+    }
+}
+
+//2) Home Structure Patterns using for loop
+
+package sample;
+
+class Home_Patterns {
+    public static void main(String[] args) {
+
+        int rows = 8;
+        int cols = 11;
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= cols; j++) {
+
+                // row 1
+                if (i == 1 && j == 5) System.out.print("*");
+
+                // row 2
+                else if (i == 2 && (j == 3 || j == 7)) System.out.print("*");
+
+                // row 3
+                else if (i == 3 && (j == 2 || j == 10)) System.out.print("*");
+
+                // row 4
+                else if (i == 4 && (j == 1 || j == 5 || j == 8 || j == 10 || j == 11))
+                    System.out.print("*");
+
+                // rows 5,6,7 same pattern
+                else if ((i == 5 || i == 6 || i == 7) && (j == 2 || j == 10))
+                    System.out.print("*");
+
+                // last row
+                else if (i == 8 && (j == 2 || j == 4 || j == 6 || j == 8 || j == 10))
+                    System.out.print("*");
+
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+// 3) Box inside X shape Patterns using For Loop
+
+package sample;
+
+public class Box_pattern {
+	
+	    public static void main(String[] args) 
+	    {
+	        int n = 5;
+
+	        for (int i = 1; i <= n; i++) {
+	            for (int j = 1; j <= n; j++) {
+
+	                if (i == j || i + j == n + 1 || i == 1 || i == n || j == 1 || j == n)
+	                    System.out.print("*");
+	                else
+	                    System.out.print(" ");
+	            }
+	            System.out.println();
+	        
+	    }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
