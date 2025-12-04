@@ -30,6 +30,6 @@ This repo highlights my consistent coding discipline, improving logic, and step-
 | --------------------------- | --------------------------------------- |
 | **Java**                    | Core logic, assignments, OOPS, patterns |
 | **Git & GitHub**            | Version control and daily updates       |
-| **VS Code / IntelliJ IDEA** | Writing and executing Java programs     |
+| **VS Code / ECLIPSE IDEA** | Writing and executing Java programs     |
 | **Markdown**                | Clean documentation for GitHub          |
 
