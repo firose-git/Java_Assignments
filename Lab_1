@@ -1,0 +1,61 @@
+//1) Maximum Value To find using Ternary Operator
+
+package sample;
+import java.util.Scanner;
+public class Max_Value_find {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the First Number : ");
+		int num1 = s.nextInt();
+		
+		System.out.println("Enter the First Number : ");
+		int num2 = s.nextInt();
+		
+		int max = (num1 > num2) ? num1 : num2;
+		
+		System.out.println("The Maximum Between " + num1 + " And " + num2 + " Is : " + max);
+
+	}
+
+}
+
+
+//2) Strong Number
+package sample;
+import java.util.Scanner;
+public class Strong_Number {
+	static int fact(int n) {
+		int f=1;
+		for (int i =1;i<=n;i++) {
+			f *= i;
+			
+		}
+		return f;
+	}
+	
+	static void check(int num) {
+		int temp = num ;
+		int sum =0;
+		while (temp>0) {
+			sum += fact(temp%10);
+			temp /= 10;
+		}
+		System.out.println((sum == num) ? num +" Strong number ":num +"is not strong number" );
+		
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Enter the number : ");
+		int n = s.nextInt();
+		
+		check(n);
+
+	}
+
+}
+
+
