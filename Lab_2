@@ -1,0 +1,56 @@
+//1) Leap Year Program
+
+package sample;
+import java.util.Scanner;
+
+public class Leap_year {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the Year : ");
+        int year = s.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println("Leap Year");
+        } 
+        else {
+            System.out.println("Not A Leap Year");
+        }
+    }
+}
+
+
+//2) overloading program 
+
+package sample;
+import java.util.Scanner;
+public class Printer_Methods {
+	void printDetails(String name,int age){
+		System.out.println("The name is "+name + ", Age is :" +age);
+		
+	
+	}
+	void printDetails(int age,String name){
+		System.out.println("The Age is: " +age  + ", Name is : " +name);
+		
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the name : ");
+		String name = s.nextLine();
+		
+		System.out.println("Enter the Age : ");
+		int age = s.nextInt();
+		
+		Printer_Methods obj = new Printer_Methods();
+		obj.printDetails(name,age);
+		
+		obj.printDetails(age,name);
+		
+		
+	}
+
+}
