@@ -1,0 +1,92 @@
+//1) Employees Details using Encapsulation
+
+package Oops;
+
+public class Employees_Eg {
+	static class Employee{
+		 int id;
+		 double salary;
+		 String Designation;
+		
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public double getSalary() {
+			return salary;
+		}
+		public void setSalary(double salary) {
+			this.salary = salary;
+		}
+		public String getDesignation() {
+			return Designation;
+		}
+		public void setDesignation(String designation) {
+			Designation = designation;
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee e =new Employee();
+		
+		
+		e.setId(101);
+		e.setSalary(20000.00);
+		e.setDesignation("Manager");
+		System.out.println("The Employee Id Is : "+ e.getId());
+		System.out.println("The Employee Salary Is : "+ e.getSalary());
+		System.out.println("The Employee Designation Is : "+ e.getDesignation());
+	}
+
+}
+
+
+
+//2) Login_Validation Using Encapsulation
+
+package Oops;
+
+public class Login_Validation_Encapsulation {
+
+    static class Login {
+        private String username;
+        private String password;
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            if (password.length() >= 8) {
+                this.password = password;
+            } else {
+                System.out.println("Password must be at least 8 characters");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Login login = new Login();
+
+        login.setUsername("Firose");
+        login.setPassword("admin123");
+
+        System.out.println("Username: " + login.getUsername());
+        System.out.println("Password: " + login.getPassword());
+    }
+}
+
