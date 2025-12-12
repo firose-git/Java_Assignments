@@ -1,0 +1,58 @@
+// ------------------------------------------------------------
+// ⭐ Bank Transaction Program using Inheritance in Java
+// ------------------------------------------------------------
+// This program demonstrates inheritance, constructor usage,
+// and the ternary operator to perform basic banking operations
+// such as withdrawal and deposit, with user input handling.
+// ------------------------------------------------------------
+
+package Oops;
+import java.util.Scanner;
+
+class Bank {
+    double amount;
+
+    Bank(double amount) {
+        this.amount = amount;
+    }
+
+    void withdraw(double withdrawAmount) {
+        String message = (withdrawAmount <= amount)
+                ? "Withdrawal successful"
+                : "Insufficient balance";
+        if (withdrawAmount <= amount) {
+            amount -= withdrawAmount;
+        }
+        System.out.println(message);
+    }
+
+    void deposit(double depositAmount) {
+        amount += depositAmount;
+    }
+}
+
+class Transaction extends Bank {
+    Transaction(double amount) {
+        super(amount);
+    }
+}
+
+public class EgForInheritance {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the total amount: ");
+        double initialAmount = sc.nextDouble();
+        Transaction t = new Transaction(initialAmount);
+
+        System.out.print("Enter withdrawal amount: ");
+        double withdrawAmount = sc.nextDouble();
+        t.withdraw(withdrawAmount);
+
+        System.out.print("Enter deposit amount: ");
+        double depositAmount = sc.nextDouble();
+        t.deposit(depositAmount);
+
+        System.out.println("After deposit, available balance: " + t.amount);
+    }
+}
