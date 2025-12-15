@@ -1,0 +1,85 @@
+1) Write a Java program to demonstrate method overriding using a superclass Animal and subclasses Dog and Cat.
+
+package Oops;
+class Animal {
+    void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+class Cat extends Dog {
+    void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
+public class MultiLevel_Inheritance {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        Animal d = new Dog();
+        Animal c = new Cat();
+
+        a.makeSound(); 
+        d.makeSound();
+        c.makeSound();
+    }
+}
+
+
+2) Write a Java program to demonstrate method overriding using multilevel inheritance with HillStation and its subclasses Manali, Mussoorie, and Gulmarg.
+
+package Oops;
+class HillStation{
+	void location(){
+		System.out.println("Location is : ");
+	}
+	void FamousFor(){
+		System.out.println("Famous For : ");
+	}
+}
+class Manali extends HillStation{
+	void location(){
+		System.out.println("Manali is in Himachal Pradesh");
+	}
+	void FamousFor(){
+		System.out.println("It is Famous For Hadimba Temple And Adventure Sports ");
+	}
+}
+class Mussoorie extends Manali{
+	void location(){
+		System.out.println("Mussoorie is in Uttarakhand");
+	}
+	void FamousFor(){
+		System.out.println("It is Famous For Education Institutions ");
+	}
+}
+class Gulmarg  extends Mussoorie{
+	void location(){
+		System.out.println("Gulmarg is in J&K");
+	}
+	void FamousFor(){
+		System.out.println("It is Famous For Skiing");
+	}
+}
+public class HillsStation_Inheritance {
+	public static void main(String[] args) {
+		HillStation h = new HillStation();
+		Manali m = new Manali();
+		Mussoorie ms = new Mussoorie();
+		Gulmarg g = new Gulmarg();
+		h.location();
+		h.FamousFor();
+		m.location();
+		m.FamousFor();
+		ms.location();
+		ms.FamousFor();
+		g.location();
+		g.FamousFor();
+	}
+}
+
+
+
