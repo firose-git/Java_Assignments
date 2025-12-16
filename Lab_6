@@ -1,0 +1,66 @@
+1) Write a Java program using an abstract class Vaccine to demonstrate abstraction and polymorphism by implementing first dose, second dose, and booster dose vaccination logic based on age and nationality.
+
+package Oops;
+
+// Abstract class
+abstract class Vaccine {
+    int age;
+    String nationality;
+    boolean isFirstDoseTaken = false;
+
+    // Constructor to initialize age and nationality
+    Vaccine(int age, String nationality) {
+        this.age = age;
+        this.nationality = nationality;
+    }
+
+    // Concrete method for first dose
+    void firstDose() {
+        if (nationality.equalsIgnoreCase("Indian") && age >= 18) {
+            System.out.println("Your First dose Successfully Done. Now you have to pay 250 Rs");
+            isFirstDoseTaken = true;
+        } else {
+            System.out.println("You are not eligible for First Dose");
+        }
+    }
+
+    // Concrete method for second dose
+    void secondDose() {
+        if (isFirstDoseTaken) {
+            System.out.println("Your Second dose Successfully Done");
+        } else {
+            System.out.println("Please complete First Dose before Second Dose");
+        }
+    }
+
+    // Abstract method
+    abstract void boosterDose();
+}
+
+// Implementation class
+class VaccinationSuccessful extends Vaccine {
+
+    VaccinationSuccessful(int age, String nationality) {
+        super(age, nationality);
+    }
+
+    // Implementing abstract method
+    @Override
+    void boosterDose() {
+        System.out.println("Your Booster dose Successfully Done");
+    }
+}
+
+// Main class
+public class Abstraction_Poly {
+    public static void main(String[] args) {
+
+        // Creating object
+        VaccinationSuccessful v = new VaccinationSuccessful(18, "Indian");
+
+        // Invoking methods
+        v.firstDose();
+        v.secondDose();
+        v.boosterDose();
+    }
+}
