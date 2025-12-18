@@ -1,0 +1,80 @@
+// 1) 1. Create an interface Payment and implement it in GooglePay and PhonePe classes.
+package Oops;
+
+
+interface Payment {
+    void pay(int amount);
+}
+
+class GooglePay implements Payment {
+    public void pay(int amount) {
+        System.out.println("Payment of " + amount + " done using GooglePay");
+    }
+}
+
+class PhonePe implements Payment {
+    public void pay(int amount) {
+        System.out.println("Payment of " + amount + " done using PhonePe");
+    }
+}
+
+public class PaymentDemo {
+    public static void main(String[] args) {
+
+        Payment p1 = new GooglePay();
+        p1.pay(500);
+
+        Payment p2 = new PhonePe();
+        p2.pay(1000);
+    }
+}
+
+//2) Design a Java program using interfaces and a factory to send notifications through Email, SMS, and Push channels demonstrating loose coupling.
+
+package Oops;
+
+interface NotificationService {
+    void sendNotification(String msg);
+}
+
+class EmailNotification implements NotificationService {
+    public void sendNotification(String msg) {
+        System.out.println("Email: " + msg);
+    }
+}
+
+class SMSNotification implements NotificationService {
+    public void sendNotification(String msg) {
+        System.out.println("SMS: " + msg);
+    }
+}
+
+class PushNotification implements NotificationService {
+    public void sendNotification(String msg) {
+        System.out.println("Push: " + msg);
+    }
+}
+
+class NotificationFactory {
+    static NotificationService getService(String type) {
+        if (type.equalsIgnoreCase("email")) return new EmailNotification();
+        if (type.equalsIgnoreCase("sms")) return new SMSNotification();
+        return new PushNotification();
+    }
+}
+
+public class NotificationDemo {
+    public static void main(String[] args) {
+
+        NotificationService n1 = NotificationFactory.getService("email");
+        n1.sendNotification("Welcome to Anudip");
+
+        NotificationService n2 = NotificationFactory.getService("sms");
+        n2.sendNotification("Task assigned");
+
+        NotificationService n3 = NotificationFactory.getService("push");
+        n3.sendNotification("Class at 10 AM");
+    }
+}
+
+
